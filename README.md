@@ -75,3 +75,6 @@ O design foi pensado para ser **moderno, responsivo e intuitivo**, com uma palet
 
 ## 📁 
 
+<img src="./assets/Readme.png">
+
+
