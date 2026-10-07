@@ -337,60 +337,292 @@ section.sobre .flex{
     transition: .2s;
 }
 
-/* Estilo Portfólio */
+/* ============================================================
+   ESTILO PORTFÓLIO (#projetos)
+   Partes:
+     - section.portfolio ....... a seção inteira
+     - .destaque ............... bloco grande do StoreVault
+     - .grade-projetos ......... grade de cards
+     - .card-projeto ........... cada card
+     - .tags ................... as "pílulas" de tecnologia
+   As versões pra celular/tablet ficam lá embaixo, na parte
+   "RESPONSIVO", procurando por "Portfólio".
+   ============================================================ */
 
 section.portfolio{
     padding: 80px 4%;
     box-shadow: 0 0 40px 10px #ffffff31; /* faz a linha sombreada */
-    
-    
 }
 
-section.portfolio .flex{
-    justify-content: space-around; /* faz com que alinhe e de espaçamento */
+/* Frase embaixo do título "MEU PORTFÓLIO." */
+.portfolio-intro{
+    color: #9a9a9a;
+    text-align: center;
+    font-size: 18px;
+    max-width: 620px;
+    margin: 20px auto 0;
+}
+
+
+/* ---------- Destaque (StoreVault) ---------- */
+
+/* Caixa grande: prints de um lado, texto do outro */
+.destaque{
+    display: grid;
+    grid-template-columns: 1.25fr 1fr; /* lado das imagens um pouco maior */
+    gap: 60px;
+    align-items: center;
     margin-top: 80px;
-    
+    padding: 50px;
+    border-radius: 30px;
+    background-color: #0d0d0d;
+    border: 1px solid #1f1f1f;
 }
 
-.img-port{
-    width:360px;
-    height: 460px;
-    background-size: cover;
-    background-position: 100% 0;
-    transition: .9s;
-    cursor: pointer;
-    border-radius: 40px;
-    background-size: 100%; /* Aumenta o zoom - quanto maior, mais próximo */
+/* Área dos prints. O "padding-bottom" abre espaço pro
+   segundo print que fica deslocado pra baixo e pra direita */
+.destaque-imagens{
     position: relative;
-
+    padding: 0 40px 60px 0;
 }
 
-.img-port:hover{
-    background-position: 100% 100%;
-    
+.destaque-imagens .print{
+    display: block;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #2a2a2a;
+    transition: .3s;
 }
 
-.overlay{
+.destaque-imagens .print img{
+    width: 100%;
+    display: block;
+}
+
+/* Segundo print (PDV), por cima do primeiro, no canto inferior direito */
+.destaque-imagens .print-secundario{
     position: absolute;
-    top: 0;
-    left: 0;
+    width: 55%;
+    right: 0;
+    bottom: 0;
+    box-shadow: 0 20px 50px #000000cc;
+}
+
+.destaque-imagens .print:hover{
+    border-color: #00ff08;
+    transform: translateY(-4px);
+}
+
+/* Etiqueta "Sistema de gestão" */
+.destaque-selo{
+    display: inline-block;
+    color: #00ff08;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.destaque-texto h3{
+    color: #fff;
+    font-size: 48px;
+    line-height: 1.1;
+    margin: 8px 0 20px;
+}
+
+.destaque-texto h3 span{
+    color: #00ff08;
+}
+
+.destaque-texto p{
+    color: #c9c9c9;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* Lista de funções do sistema (cada <li> com um ícone verde) */
+.destaque-lista{
+    list-style: none;
+    margin: 25px 0;
+}
+
+.destaque-lista li{
+    color: #e6e6e6;
+    font-size: 15px;
+    padding: 9px 0;
+    border-bottom: 1px solid #1c1c1c;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.destaque-lista li i{
+    color: #00ff08;
+    font-size: 18px;
+}
+
+.destaque-botoes{
+    margin-top: 30px;
+}
+
+/* Botão verde "Pedir demonstração" (é um link com cara de botão) */
+.btn-verde{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 30px;
+    background-color: #00ff08;
+    color: #000;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: .2s;
+}
+
+.btn-verde:hover{
+    box-shadow: 0 0 8px #00ff089f;
+    transform: scale(1.05);
+}
+
+
+/* ---------- Tags de tecnologia (usadas no destaque e nos cards) ---------- */
+
+.tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.tags span{
+    font-size: 12px;
+    color: #bdbdbd;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background-color: #1a1a1a;
+    border: 1px solid #2a2a2a;
+}
+
+
+/* ---------- Grade de cards ---------- */
+
+/* 3 colunas no PC. Pra mudar a quantidade por linha, troque o "3" */
+.grade-projetos{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.card-projeto{
+    background-color: #0d0d0d;
+    border: 1px solid #1f1f1f;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: .3s;
+}
+
+.card-projeto:hover{
+    border-color: #00ff0866;
+    transform: translateY(-6px);
+}
+
+/* Moldura da imagem. "aspect-ratio" mantém todas do mesmo tamanho */
+.card-img{
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+}
+
+.card-img img{
     width: 100%;
     height: 100%;
-    background-color: #000000d5;
-    border-radius: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    font-weight: 600;
-    color: #fff;
-    opacity: 0;
-    transition: .5s;
+    object-fit: cover;
+    object-position: top; /* mostra o topo do site no print */
+    display: block;
+    transition: .6s;
+}
 
+/* Zoom leve na imagem ao passar o mouse no card */
+.card-projeto:hover .card-img img{
+    transform: scale(1.05);
 }
-.overlay:hover{
-    opacity: 1;
+
+/* Selo opcional no canto da imagem (ex: "Full-stack") */
+.card-selo{
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background-color: #000000cc;
+    color: #00ff08;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: 1px solid #00ff0855;
 }
+
+.card-corpo{
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* faz os links ficarem sempre no fim do card */
+}
+
+.card-corpo h3{
+    color: #fff;
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.card-corpo p{
+    color: #a8a8a8;
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+/* "Ver site" e "Código" */
+.card-links{
+    display: flex;
+    gap: 20px;
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+.card-links a{
+    color: #00ff08;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.card-links a:hover{
+    text-decoration: underline;
+}
+
+/* "Tem mais coisa no meu GitHub" */
+.portfolio-mais{
+    text-align: center;
+    color: #9a9a9a;
+    margin-top: 50px;
+}
+
+.portfolio-mais a{
+    color: #00ff08;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.portfolio-mais a:hover{
+    text-decoration: underline;
+}
+
 
 /* Estilo Formulário */
 
@@ -655,14 +887,15 @@ footer .btn-social{
         text-align: center;
     }
 
-    /* Portfólio */
-    section.portfolio .flex{
-        align-items: center;
-        gap: 30px;
+    /* Portfólio: destaque vira uma coluna (prints em cima, texto embaixo)
+       e a grade passa de 3 pra 2 cards por linha */
+    .destaque{
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 35px;
     }
-    .img-port{
-        width: 300px;
-        height: 380px;
+    .grade-projetos{
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -715,10 +948,16 @@ footer .btn-social{
         font-size: 24px;
     }
 
-    /* Portfólio */
-    .img-port{
-        width: 100%;
-        height: 300px;
+    /* Portfólio: 1 card por linha */
+    .grade-projetos{
+        grid-template-columns: 1fr;
+    }
+    .destaque{
+        padding: 25px;
+        border-radius: 20px;
+    }
+    .destaque-texto h3{
+        font-size: 36px;
     }
 
     /* Formulário + Localização */
@@ -818,11 +1057,25 @@ footer .btn-social{
     }
 
     /* Portfólio */
-    .img-port{
-        height: 250px;
+    .portfolio-intro{
+        font-size: 15px;
     }
-    .overlay{
-        font-size: 22px;
+    .destaque{
+        padding: 18px;
+        margin-top: 50px;
+    }
+    .destaque-imagens{
+        padding: 0 20px 40px 0;
+    }
+    .destaque-texto p{
+        font-size: 15px;
+    }
+    .destaque-lista li{
+        font-size: 14px;
+    }
+    .btn-verde{
+        width: 100%;
+        justify-content: center;
     }
 
     /* Formulário */
@@ -868,11 +1121,9 @@ footer .btn-social{
     .topo-do-site .txt-topo-site h1 span{
         font-size: 28px;
     }
-    .img-port{
-        height: 200px;
+    .destaque-texto h3{
+        font-size: 30px;
     }
-
-
 }
 
 /* ===== MENU CENTRALIZADO ENTRE LOGO E BOTÃO ===== */

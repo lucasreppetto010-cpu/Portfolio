@@ -1,35 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
+<!--
+    ============================================================
+    PORTFÓLIO - LUCAS REPPETTO
+    ============================================================
+    Ordem das seções nesta página (de cima pra baixo):
+
+      1. <header>                 -> logo, menu e botão "Contato"
+      2. #inicio                  -> topo com nome e foto
+      3. #especialidades          -> as 4 caixas de tecnologias
+      4. #sobre                   -> foto + texto sobre mim
+      5. #projetos                -> StoreVault em destaque + cards dos sites
+      6. #contato                 -> formulário + WhatsApp/email
+      7. <footer>                 -> rodapé
+
+    Dica: use Ctrl+F e procure pelo id (ex: "#projetos" ou "PROJETO:")
+    pra pular direto pro trecho que você quer editar.
+
+    O visual de cada parte fica no style.css, com o mesmo nome de seção.
+    ============================================================
+-->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Texto que aparece no Google e quando o link é compartilhado no WhatsApp -->
+    <meta name="description"
+        content="Lucas Reppetto - desenvolvedor web em Sant'Ana do Livramento. Sites para negócios locais e o StoreVault, sistema de gestão para lojas.">
+
     <link rel="stylesheet" href="./style.css">
+
+    <!-- Fonte Poppins (Google Fonts) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <!-- boot strep icons -->
+    <!-- Bootstrap Icons: os ícones usados são as tags <i class="bi bi-NOME">.
+         Lista de ícones: https://icons.getbootstrap.com -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <!-- fim boot strep icons -->
-    <title>Lucas | Portfólio</title>
 
+    <title>Lucas | Portfólio</title>
 </head>
 
 
 <body>
 
+    <!-- ========================================================
+         1. CABEÇALHO
+         ======================================================== -->
     <header>
-
         <div class="interface">
+
             <div class="logo">
                 <a href="#">
                     <img class="logo-img" src="./assets/logo.png" alt="logo-lucas-reppetto">
                 </a>
             </div><!-- logo -->
 
+            <!-- Menu do computador. Se criar uma seção nova, adicione o link aqui
+                 E no menu do celular (mais abaixo), com o mesmo href="#id-da-secao" -->
             <nav class="menu-desktop">
                 <ul>
                     <li><a href="#inicio">Inicio</a></li>
@@ -37,50 +69,47 @@
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#projetos">Projetos</a></li>
                 </ul>
-
-
             </nav>
 
             <div class="btn-contato">
                 <a href="#contato">
                     <button>Contato</button>
                 </a>
-
-
             </div><!-- btn-contato -->
 
+            <!-- Ícone de "hambúrguer" que só aparece no celular (controlado no script.js) -->
             <div class="btn-abrir-menu" id="btn-menu">
                 <i class="bi bi-list"></i>
             </div><!-- btn-abrir-menu-->
 
+            <!-- Menu do celular (abre pela lateral) -->
             <div class="menu-mobile" id="menu-mobile">
                 <div class="btn-fechar">
                     <i class="bi bi-x-lg"></i>
                 </div><!--btn fechar-->
-                 <nav>
-                <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#especialidades">Especialidades</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#projetos">Projetos</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-
-
-            </nav>
-
+                <nav>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#especialidades">Especialidades</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#projetos">Projetos</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </nav>
             </div><!--menu mobile-->
 
-           <div class="overlay-menu" id="overlay-menu">              
-           </div><!-- overlay-menu -->
+            <!-- Fundo escuro atrás do menu do celular. Clicar nele fecha o menu -->
+            <div class="overlay-menu" id="overlay-menu"></div>
 
         </div> <!-- interface -->
-
-
-
     </header>
 
+
     <main>
+
+        <!-- ========================================================
+             2. TOPO DO SITE (#inicio)
+             ======================================================== -->
         <section class="topo-do-site" id="inicio">
             <div class="interface">
                 <div class="flex">
@@ -89,11 +118,12 @@
                             <br>
                             Lucas Reppetto<span>.</span>
                         </h1>
-                        <h2>Sou um Desenvolvedor Front-end Jr<span>.</span></h2>
-                        <p>Estudando backend com o objetivo de tornar-me um desenvolvedor Fullstack</p>
+                        <h2>Desenvolvedor Web<span>.</span></h2>
+                        <p>Faço sites e sistemas pra negócios de verdade, de landing page de barbearia
+                            a um sistema de gestão completo pra loja.</p>
 
                         <div class="btn-contato">
-                            <a href="https://w.app/dvrqo6">
+                            <a href="https://w.app/dvrqo6" target="_blank" rel="noopener">
                                 <button>Entre em Contato</button>
                             </a>
                         </div>
@@ -101,43 +131,52 @@
 
                     <div class="img-topo-site">
                         <img class="perfil-img" src="./assets/perfil.png" alt="foto de perfil do lucas reppetto">
-
                     </div><!-- img-topo-site -->
                 </div><!-- flex -->
             </div> <!-- interface -->
         </section> <!-- topo da pagina -->
 
 
-
+        <!-- ========================================================
+             3. ESPECIALIDADES (#especialidades)
+             Cada caixa = um <div class="especialidades-box">.
+             Pra adicionar outra, copie uma caixa inteira e troque
+             o ícone (bi bi-...), o título e o texto.
+             ======================================================== -->
         <section class="especialidades" id="especialidades">
             <div class="interface">
                 <h2 class="titulo">MINHAS <span>ESPECIALIDADES.</span></h2>
                 <div class="flex">
-                    <div class="especialidades-box">
-                        <i class="bi bi-filetype-html"></i>
-                        <h3>HTML</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias reiciendis eveniet dolorum,
-                            itaque quaerat facere blanditiis!</p>
-                    </div><!-- especialidades-box-->
 
                     <div class="especialidades-box">
-                        <i class="bi bi-css"></i>
-                        <h3>CSS</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias reiciendis eveniet dolorum,
-                            itaque quaerat facere blanditiis!</p>
+                        <i class="bi bi-filetype-html"></i>
+                        <h3>HTML & CSS</h3>
+                        <p>Layout responsivo feito na mão, sem template. Cada site que entrego funciona
+                            no celular primeiro, porque é de lá que vem a maioria dos clientes.</p>
                     </div><!-- especialidades-box-->
 
                     <div class="especialidades-box">
                         <i class="bi bi-javascript"></i>
                         <h3>JavaScript</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias reiciendis eveniet dolorum,
-                            itaque quaerat facere blanditiis!</p>
+                        <p>Carrinho de compras, filtros, agendamento, PDV com leitor de código de barras.
+                            Uso JavaScript puro e sei o que cada linha está fazendo.</p>
+                    </div><!-- especialidades-box-->
+
+                    <div class="especialidades-box">
+                        <i class="bi bi-hdd-stack"></i>
+                        <h3>Back-end</h3>
+                        <p>Node.js com Express, banco SQLite/libSQL e Firebase. Login de administrador,
+                            API própria e site publicado no ar pro cliente usar.</p>
                     </div><!-- especialidades-box-->
 
                 </div><!-- flex -->
             </div><!-- interface -->
         </section><!-- especialidades -->
 
+
+        <!-- ========================================================
+             4. SOBRE (#sobre)
+             ======================================================== -->
         <section class="sobre" id="sobre">
             <div class="interface">
                 <div class="flex">
@@ -161,148 +200,354 @@
                             sistemas. Busco oportunidades desafiadoras onde eu possa aplicar meu conhecimento em
                             front-end e acelerar meu crescimento como desenvolvedor completo.</p>
 
+                        <!-- Botões redondos das redes sociais (o mesmo bloco se repete no rodapé) -->
                         <div class="btn-social">
-                            <a href="https://www.linkedin.com/in/lucas-reppetto-454846288/"><button><i
-                                        class="bi bi-linkedin"></i></button> </a>
-                            <a href="https://github.com/lucasreppetto010-cpu"> <button><i
-                                        class="bi bi-github"></i></button> </a>
-                            <a href="https://www.instagram.com/lreppetto7_?igsh=ZTdwa2ZodHRuNms4&utm_source=qr"><button><i
-                                        class="bi bi-instagram"></i></button> </a>
-                            <a href="https://w.app/dvrqo6"><button><i class="bi bi-whatsapp"></i></button> </a>
-                        </div>
+                            <a href="https://www.linkedin.com/in/lucas-reppetto-454846288/" target="_blank" rel="noopener"><button aria-label="LinkedIn"><i
+                                        class="bi bi-linkedin"></i></button></a>
+                            <a href="https://github.com/lucasreppetto010-cpu" target="_blank" rel="noopener"><button aria-label="GitHub"><i
+                                        class="bi bi-github"></i></button></a>
+                            <a href="https://www.instagram.com/lreppetto7_?igsh=ZTdwa2ZodHRuNms4&utm_source=qr" target="_blank" rel="noopener"><button aria-label="Instagram"><i
+                                        class="bi bi-instagram"></i></button></a>
+                            <a href="https://w.app/dvrqo6" target="_blank" rel="noopener"><button aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></button></a>
+                        </div><!-- btn-social -->
 
-                    </div><!-- btn-social -->
-                </div><!-- txt-sobre -->
-            </div><!-- flex -->
+                    </div><!-- txt-sobre -->
+                </div><!-- flex -->
             </div><!-- interface -->
         </section><!-- sobre -->
 
+
+        <!-- ========================================================
+             5. PROJETOS (#projetos)
+             Dividido em duas partes:
+               5.1 -> StoreVault em destaque (bloco grande)
+               5.2 -> grade com os cards dos sites
+             Os prints ficam em: assets/projetos/
+             ======================================================== -->
         <section class="portfolio" id="projetos">
             <div class="interface">
                 <h2 class="titulo">MEU <span>PORTFÓLIO.</span></h2>
-                <div class="flex">
-                    <div class="img-port" style="background-image: url(assets/crcleaning.png);">
-                        <a href="https://cr-cleaning.netlify.app/">
-                            <div class="overlay">Projeto 1</div>
+
+                <!-- Frase curta embaixo do título -->
+                <p class="portfolio-intro">Uma parte do que eu já construí. Quase tudo aqui foi feito pra um
+                    cliente de verdade, aqui da fronteira.</p>
+
+
+                <!-- ----------------------------------------------------
+                     5.1 PROJETO: STOREVAULT (destaque)
+                     Lado esquerdo = prints | lado direito = texto
+                     ---------------------------------------------------- -->
+                <article class="destaque">
+
+                    <!-- Prints do sistema. Clicar abre a imagem em tamanho real.
+                         O primeiro print é o grande, o segundo fica por cima no canto. -->
+                    <div class="destaque-imagens">
+                        <a href="assets/projetos/storevault-painel.jpg" target="_blank" class="print print-principal">
+                            <img src="assets/projetos/storevault-painel.jpg"
+                                alt="Painel inicial do StoreVault com vendas da semana e produtos mais vendidos" loading="lazy">
                         </a>
-                    </div>
-                    <div class="img-port" style="background-image: url(assets/portfolio-donizete.jpg);">
-                        <a href="https://donizette-ferrao.netlify.app/">
-                            <div class="overlay">Projeto 2</div>
+                        <a href="assets/projetos/storevault-pdv.jpg" target="_blank" class="print print-secundario">
+                            <img src="assets/projetos/storevault-pdv.jpg"
+                                alt="Tela de venda (PDV) do StoreVault com itens no carrinho" loading="lazy">
                         </a>
-                    </div>
-                    <div class="img-port" style="background-image: url(assets/devmoney.png);">
-                        <a href="https://devmoney.netlify.app/">
-                            <div class="overlay">Projeto 3</div>
-                        </a>
-                    </div>
-                    <div class="img-port" style="background-image: url(assets/portfolio-sbbarbearia.jpg);">
-                        <a href="https://sb-barbearia.netlify.app//">
-                            <div class="overlay">Projeto 4</div>
-                        </a>
-                    </div>
-                </div><!-- flex -->
+                    </div><!-- destaque-imagens -->
+
+                    <div class="destaque-texto">
+                        <!-- Etiqueta pequena acima do nome -->
+                        <span class="destaque-selo">Sistema de gestão</span>
+
+                        <h3>Store<span>Vault</span></h3>
+
+                        <p>Sistema de gestão comercial que roda no computador da loja, sem internet e sem
+                            instalar nada. Fiz pensando no comércio pequeno: vender, controlar o caixa e o
+                            estoque, cobrar o crediário e saber no fim do mês se deu lucro.</p>
+
+                        <!-- Lista do que o sistema faz. Pra adicionar um item, copie uma linha <li> -->
+                        <ul class="destaque-lista">
+                            <li><i class="bi bi-upc-scan"></i> PDV com leitor de código de barras e atalhos no teclado</li>
+                            <li><i class="bi bi-cash-stack"></i> Abertura, sangria e fechamento de caixa conferido</li>
+                            <li><i class="bi bi-box-seam"></i> Estoque com importação do XML da NF-e e etiquetas</li>
+                            <li><i class="bi bi-wallet2"></i> Crediário, contas a pagar e taxas das maquininhas</li>
+                            <li><i class="bi bi-person-lock"></i> Permissões por funcionário (caixa não vê faturamento)</li>
+                            <li><i class="bi bi-cloud-check"></i> Backup automático no Google Drive ou OneDrive</li>
+                        </ul>
+
+                        <!-- Tecnologias usadas (as "pílulas" cinzas) -->
+                        <div class="tags">
+                            <span>JavaScript</span>
+                            <span>IndexedDB</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>+4.600 linhas</span>
+                        </div>
+
+                        <!-- O sistema não tem link público (roda no PC do cliente),
+                             então o botão leva pro WhatsApp pedindo uma demonstração.
+                             O texto depois de "?text=" é a mensagem que já vem escrita. -->
+                        <div class="destaque-botoes">
+                            <a class="btn-verde"
+                                href="https://wa.me/5555996822565?text=Oi%20Lucas!%20Vi%20o%20StoreVault%20no%20seu%20portf%C3%B3lio%20e%20queria%20ver%20uma%20demonstra%C3%A7%C3%A3o."
+                                target="_blank" rel="noopener">
+                                <i class="bi bi-whatsapp"></i> Pedir demonstração
+                            </a>
+                        </div>
+                    </div><!-- destaque-texto -->
+                </article><!-- destaque -->
+
+
+                <!-- ----------------------------------------------------
+                     5.2 GRADE DE PROJETOS
+                     Cada card é um <article class="card-projeto">.
+
+                     PRA ADICIONAR UM PROJETO NOVO:
+                       1. Tire um print do site (1440x900 fica bom)
+                          e salve em assets/projetos/
+                       2. Copie um <article class="card-projeto"> inteiro
+                       3. Troque: imagem, nome, texto, tags e os 2 links
+                       4. Se o projeto não tiver site no ar, apague o
+                          link "Ver site" e deixe só o do GitHub
+
+                     A grade se ajusta sozinha (3 por linha no PC,
+                     2 no tablet, 1 no celular) - ver style.css.
+                     ---------------------------------------------------- -->
+                <div class="grade-projetos">
+
+                    <!-- PROJETO: ALMADA OUTLET -->
+                    <article class="card-projeto">
+                        <div class="card-img">
+                            <img src="assets/projetos/almada-outlet.jpg" alt="Site da loja Almada Outlet" loading="lazy">
+                            <!-- Selo no canto da imagem (opcional, pode apagar) -->
+                            <span class="card-selo">Full-stack</span>
+                        </div>
+                        <div class="card-corpo">
+                            <h3>Almada Outlet</h3>
+                            <p>Loja virtual com painel onde o próprio dono cadastra produtos, preços e
+                                tamanhos. O cliente monta o carrinho e o pedido chega pronto no WhatsApp.</p>
+                            <div class="tags">
+                                <span>Node.js</span>
+                                <span>Express</span>
+                                <span>libSQL</span>
+                            </div>
+                            <div class="card-links">
+                                <a href="https://almada-outlet.onrender.com" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> Ver site</a>
+                                <a href="https://github.com/lucasreppetto010-cpu/Almada-outlet" target="_blank" rel="noopener"><i class="bi bi-github"></i> Código</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROJETO: SB BARBEARIA -->
+                    <article class="card-projeto">
+                        <div class="card-img">
+                            <img src="assets/projetos/sb-barbearia.jpg" alt="Site da SB Barbearia" loading="lazy">
+                            <span class="card-selo">Agendamento</span>
+                        </div>
+                        <div class="card-corpo">
+                            <h3>SB Barbearia</h3>
+                            <p>Agendamento online por barbeiro e horário, respeitando o expediente de cada
+                                dia. Tem uma tela separada pros barbeiros acompanharem a agenda.</p>
+                            <div class="tags">
+                                <span>JavaScript</span>
+                                <span>Firebase</span>
+                            </div>
+                            <div class="card-links">
+                                <a href="https://sb-barbearia.netlify.app/" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> Ver site</a>
+                                <a href="https://github.com/lucasreppetto010-cpu/Sb-barbearia" target="_blank" rel="noopener"><i class="bi bi-github"></i> Código</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROJETO: KAIRÓS
+                         O GitHub Pages deste projeto está desativado (dá 404).
+                         Quando ativar, coloque o link "Ver site" de volta, igual aos outros cards:
+                         https://lucasreppetto010-cpu.github.io/kairos-sapatos/ -->
+                    <article class="card-projeto">
+                        <div class="card-img">
+                            <img src="assets/projetos/kairos.jpg" alt="Catálogo de calçados Kairós" loading="lazy">
+                        </div>
+                        <div class="card-corpo">
+                            <h3>Kairós Social Style</h3>
+                            <p>Catálogo de calçados com busca, carrinho e fechamento do pedido pelo
+                                WhatsApp. Mais de 20 modelos, pensado pra vender pelo celular.</p>
+                            <div class="tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="card-links">
+                                <a href="https://github.com/lucasreppetto010-cpu/kairos-sapatos" target="_blank" rel="noopener"><i class="bi bi-github"></i> Código</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROJETO: ULTRA SORRISO
+                         Ainda sem site publicado. Quando publicar, adicione o link "Ver site". -->
+                    <article class="card-projeto">
+                        <div class="card-img">
+                            <img src="assets/projetos/ultra-sorriso.jpg" alt="Site da clínica odontológica Ultra Sorriso" loading="lazy">
+                        </div>
+                        <div class="card-corpo">
+                            <h3>Ultra Sorriso</h3>
+                            <p>Site de clínica odontológica aqui de Livramento: tratamentos, equipe,
+                                resultados e agendamento da avaliação direto com a recepção pelo WhatsApp.</p>
+                            <div class="tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="card-links">
+                                <a href="https://github.com/lucasreppetto010-cpu/ultra-sorriso" target="_blank" rel="noopener"><i class="bi bi-github"></i> Código</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROJETO: CR CLEANING -->
+                    <article class="card-projeto">
+                        <div class="card-img">
+                            <img src="assets/projetos/cr-cleaning.jpg" alt="Site da empresa de limpeza CR Cleaning" loading="lazy">
+                            <span class="card-selo">Cliente nos EUA</span>
+                        </div>
+                        <div class="card-corpo">
+                            <h3>CR Cleaning</h3>
+                            <p>Landing page em inglês pra uma empresa de limpeza em Connecticut. Objetivo
+                                simples: fazer o visitante chamar no WhatsApp e agendar.</p>
+                            <div class="tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                            </div>
+                            <div class="card-links">
+                                <a href="https://cr-cleaning.netlify.app/" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> Ver site</a>
+                                <a href="https://github.com/lucasreppetto010-cpu/Cr-cleaning" target="_blank" rel="noopener"><i class="bi bi-github"></i> Código</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROJETO: KOREIA BARBER SHOP -->
+                    <article class="card-projeto">
+                        <div class="card-img">
+                            <img src="assets/projetos/koreia-barber.jpg" alt="Site da Koreia Barber Shop" loading="lazy">
+                        </div>
+                        <div class="card-corpo">
+                            <h3>Koreia Barber Shop</h3>
+                            <p>Site institucional de barbearia com serviços, portfólio de cortes e contato
+                                rápido por Instagram e WhatsApp.</p>
+                            <div class="tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="card-links">
+                                <a href="https://github.com/lucasreppetto010-cpu/koreia-barberShop" target="_blank" rel="noopener"><i class="bi bi-github"></i> Código</a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div><!-- grade-projetos -->
+
+                <!-- Link pro GitHub embaixo da grade -->
+                <p class="portfolio-mais">
+                    Tem mais coisa no meu <a href="https://github.com/lucasreppetto010-cpu" target="_blank" rel="noopener">GitHub <i class="bi bi-arrow-right"></i></a>
+                </p>
+
             </div><!-- interface -->
         </section> <!-- portfolio -->
 
+
+        <!-- ========================================================
+             6. CONTATO (#contato)
+             O formulário usa o Netlify Forms (data-netlify="true"):
+             o Netlify não roda PHP, então o envia.php não funcionava
+             no site publicado. As mensagens chegam no painel do
+             Netlify > seu site > Forms. Lá dá pra ativar aviso por email.
+             ======================================================== -->
         <section class="formulario" id="contato">
             <div class="interface">
                 <h2 class="titulo">FALA <span>COMIGO.</span></h2>
 
                 <div class="container-contato">
-                <div class="form-wrapper">
+                    <div class="form-wrapper">
 
-                <form action="envia.php" method="post">
-                    <input type="text" name="nome" id="nome" placeholder="Seu Nome:" required autocomplete="on">
-                    <input type="text" name="email" id="email" placeholder="Seu Email:" autocomplete="on">
-                    <input type="number" name="celular" id="celular" placeholder="Seu Celular:" required autocomplete="on">
-                    <textarea name="texto" id="texto" placeholder="Sua Mensagem" required></textarea>
-                    <div class="btn-enviar"><input type="submit" value="ENVIAR"></div>
+                        <form name="contato" method="POST" data-netlify="true">
+                            <!-- Campo obrigatório pro Netlify saber qual formulário é -->
+                            <input type="hidden" name="form-name" value="contato">
 
-                </form>
-                </div>
+                            <input type="text" name="nome" id="nome" placeholder="Seu Nome:" required autocomplete="name">
+                            <input type="email" name="email" id="email" placeholder="Seu Email:" autocomplete="email">
+                            <input type="tel" name="celular" id="celular" placeholder="Seu Celular:" required autocomplete="tel">
+                            <textarea name="texto" id="texto" placeholder="Sua Mensagem" required></textarea>
+                            <div class="btn-enviar"><input type="submit" value="ENVIAR"></div>
+                        </form>
+                    </div><!-- form-wrapper -->
 
+                    <!-- Card do lado do formulário com endereço, WhatsApp e email -->
+                    <div class="localizacao-wrapper">
+                        <div class="localizacao-card">
+                            <div class="localizacao-header">
+                                <i class="bi bi-geo-alt-fill"></i>
+                            </div>
 
-                <div class="localizacao-wrapper">
-                <div class="localizacao-card">
-                    <div class="localizacao-header">
-                        <i class="bi bi-geo-alt-fill"></i>
-                    </div>
-                    
-                    <div class="info-item">
-                        <i class="bi bi-geo"></i>
-                        <div>
-                            <h4>Endereço</h4>
-                            <p>Sant'Ana do Livramento, RS - Brasil</p>
-                        </div>
-                    </div>
-                    
-                    <div class="info-item">
-                        <i class="bi bi-whatsapp"></i>
-                        <div>
-                            <h4>WhatsApp</h4>
-                            <a href="https://w.app/dvrqo6">(55) 99682-2565</a>
-                        </div>
-                    </div>
+                            <div class="info-item">
+                                <i class="bi bi-geo"></i>
+                                <div>
+                                    <h4>Endereço</h4>
+                                    <p>Sant'Ana do Livramento, RS - Brasil</p>
+                                </div>
+                            </div>
 
-                    <div class="info-item">
-                        <i class="bi bi-envelope-fill"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <a href="mailto:lucasreppetto010@gmail.com">lucasreppetto010@gmail.com</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                            <div class="info-item">
+                                <i class="bi bi-whatsapp"></i>
+                                <div>
+                                    <h4>WhatsApp</h4>
+                                    <a href="https://w.app/dvrqo6" target="_blank" rel="noopener">(55) 99682-2565</a>
+                                </div>
+                            </div>
 
-
-
+                            <div class="info-item">
+                                <i class="bi bi-envelope-fill"></i>
+                                <div>
+                                    <h4>Email</h4>
+                                    <a href="mailto:lucasreppetto010@gmail.com">lucasreppetto010@gmail.com</a>
+                                </div>
+                            </div>
+                        </div><!-- localizacao-card -->
+                    </div><!-- localizacao-wrapper -->
+                </div><!-- container-contato -->
 
             </div> <!--interface-->
         </section> <!--formulario-->
 
     </main>
 
+
+    <!-- ========================================================
+         7. RODAPÉ
+         ======================================================== -->
     <footer>
         <div class="interface">
             <div class="line-footer">
                 <div class="flex">
                     <div class="logo-footer">
                         <img src="assets/logo.png" alt="logotipo LR" class="logo-img">
-
                     </div> <!--logo-footer-->
 
                     <div class="btn-social">
-                        <a href="https://www.linkedin.com/in/lucas-reppetto-454846288/"><button><i
-                                    class="bi bi-linkedin"></i></button> </a>
-                        <a href="https://github.com/lucasreppetto010-cpu"> <button><i class="bi bi-github"></i></button>
-                        </a>
-                        <a href="https://www.instagram.com/lreppetto7_?igsh=ZTdwa2ZodHRuNms4&utm_source=qr"><button><i
-                                    class="bi bi-instagram"></i></button> </a>
-                        <a href="https://w.app/dvrqo6"><button><i class="bi bi-whatsapp"></i></button> </a>
+                        <a href="https://www.linkedin.com/in/lucas-reppetto-454846288/" target="_blank" rel="noopener"><button aria-label="LinkedIn"><i
+                                    class="bi bi-linkedin"></i></button></a>
+                        <a href="https://github.com/lucasreppetto010-cpu" target="_blank" rel="noopener"><button aria-label="GitHub"><i class="bi bi-github"></i></button></a>
+                        <a href="https://www.instagram.com/lreppetto7_?igsh=ZTdwa2ZodHRuNms4&utm_source=qr" target="_blank" rel="noopener"><button aria-label="Instagram"><i
+                                    class="bi bi-instagram"></i></button></a>
+                        <a href="https://w.app/dvrqo6" target="_blank" rel="noopener"><button aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></button></a>
                     </div> <!--btn-social-->
                 </div> <!--flex-->
             </div> <!-- line-footer -->
 
-
             <div class="line-footer borda">
                 <p><i class="bi bi-envelope-fill"></i> <a
                         href="mailto:lucasreppetto010@gmail.com">lucasreppetto010@gmail.com</a></p>
-                        
-
-
             </div> <!-- line-footer -->
         </div> <!--interface-->
     </footer>
 
-
-
-
-
+    <script src="./script.js" defer></script>
 </body>
-
-
-<script src="./script.js" defer></script>
 
 </html>
