@@ -45,7 +45,7 @@ h2.titulo{
     color: #fff;
     font-size: 50px;
     text-align: center;
-    margin-top: 200px;
+    margin-top: 120px; /* espaço acima dos títulos das seções */
 }
 
 h2.titulo span{
@@ -69,7 +69,7 @@ header > .interface{
 }
 
 header a{
-    color: #5c5c5c;
+    color: #9a9a9a;
     text-decoration: none;
     display: inline-block;
     transition: .2s;
@@ -183,13 +183,12 @@ header nav .menu-desktop ul li{
 
 /* Estilo do Topo */
 
-section .topo-do-site{
+/* OBS: "section.topo-do-site" SEM espaço = a <section> que tem essa classe */
+section.topo-do-site{
     padding: 40px 4%;
-    
-    
 }
 
-section .topo-do-site .flex{
+section.topo-do-site .flex{
     align-items: center;
     justify-content: center;
     gap: 90px;
@@ -198,7 +197,7 @@ section .topo-do-site .flex{
 
 .topo-do-site .txt-topo-site {
     margin-right: 200px; /* Aumente este valor para mais espaço */
-    margin-top: 180px;
+    margin-top: 80px;
 }
 
 .topo-do-site h1{    
@@ -233,7 +232,7 @@ section .topo-do-site .flex{
 .topo-do-site .img-topo-site img{
     position: relative;
     animation: flutuar 2s ease-in-out infinite alternate;
-    margin-top: 100px;
+    margin-top: 40px;
 }
 
 @keyframes flutuar{
@@ -247,9 +246,8 @@ section .topo-do-site .flex{
 
 /* Estilo das Especialidades */
 
-section .especialidades{
+section.especialidades{
     padding: 40px 4%;
-    
 }
 
 section.especialidades .flex{
@@ -294,7 +292,6 @@ section.sobre .flex{
 
 .sobre-img{
     width: 500px;
-    margin-top: 200px;
     border-radius: 30px;
     border: 4px solid #63636393;
     
@@ -310,7 +307,6 @@ section.sobre .flex{
      font-size: 60px;
      line-height: 50px;
      margin-bottom: 40px;
-     margin-top: 150px;
      
 }
 
@@ -321,8 +317,9 @@ section.sobre .flex{
 
 .sobre .txt-sobre p{
     margin: 20px 0;
-    text-align: justify;
-    font-size: 25px;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #d6d6d6;
 }
 
 .btn-social button{
@@ -848,7 +845,7 @@ footer .btn-social{
 }
 
     /* Cabeçalho */
-    .menu-desktop, .btn-contato{
+    .menu-desktop, header .btn-contato{
         display: none;
     }
 
@@ -907,7 +904,23 @@ footer .btn-social{
     }
     h2.titulo{
         font-size: 28px;
-        margin-top: 100px;
+        margin-top: 60px;
+    }
+
+    /* Menos espaço entre as caixas de especialidades no celular */
+    section.especialidades .flex{
+        gap: 10px;
+    }
+    .especialidades .especialidades-box{
+        margin-top: 20px;
+    }
+
+    /* Menos espaço em cima/embaixo das seções no celular */
+    section.sobre,
+    section.portfolio,
+    section.formulario{
+        padding-top: 40px;
+        padding-bottom: 40px;
     }
     h2.titulo span{
         font-size: 28px;
@@ -994,7 +1007,7 @@ footer .btn-social{
     }
     h2.titulo{
         font-size: 22px;
-        margin-top: 80px;
+        margin-top: 50px;
     }
     h2.titulo span{
         font-size: 22px;
